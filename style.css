@@ -1,5 +1,7 @@
 /* 全部选择器带 cx- 前缀，不触碰酒馆任何原生元素 */
 
+/* ========== 通用文字与容器 ========== */
+
 .cx-block .cx-notice {
     background: rgba(76, 175, 80, 0.12);
     border: 1px solid rgba(76, 175, 80, 0.3);
@@ -45,11 +47,8 @@
     margin: 4px 0 6px;
 }
 
-.cx-block .cx-warn {
-    opacity: 0.85;
-    color: #ffb74d;
-}
-
+.cx-block .cx-warn { opacity: 0.85; color: #ffb74d; }
+.cx-block .cx-sugg { opacity: 0.8; }
 .cx-block .cx-dim { opacity: 0.55; font-weight: normal; }
 
 .cx-block .cx-empty {
@@ -64,7 +63,17 @@
     background: rgba(128, 128, 128, 0.18);
     padding: 0 3px;
     border-radius: 3px;
+    word-break: break-all;
 }
+
+.cx-block .cx-inline {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.85em;
+}
+
+/* ========== 表格 ========== */
 
 .cx-block .cx-table {
     width: 100%;
@@ -101,6 +110,8 @@
     opacity: 0.7;
 }
 
+/* ========== 标记 ========== */
+
 .cx-block .cx-tag {
     display: inline-block;
     font-size: 0.85em;
@@ -114,18 +125,17 @@
 .cx-block .cx-tag-card    { background: rgba(171, 71, 188, 0.28); }
 .cx-block .cx-tag-history { background: rgba(102, 187, 106, 0.28); }
 
-/* 死规则表 */
-.cx-block .cx-dead .cx-cbcell {
-    width: 1.8em;
-    text-align: center;
-    padding-top: 6px;
+.cx-block .cx-trig {
+    display: inline-block;
+    font-size: 0.82em;
+    padding: 0 4px;
+    border-radius: 3px;
+    margin-right: 5px;
 }
 
-.cx-block .cx-cb {
-    width: 16px;
-    height: 16px;
-    margin: 0;
-}
+.cx-block .cx-trig-const { background: rgba(239, 83, 80, 0.28); }
+.cx-block .cx-trig-vec   { background: rgba(126, 87, 194, 0.28); }
+.cx-block .cx-trig-key   { background: rgba(38, 166, 154, 0.28); }
 
 .cx-block .cx-lv {
     display: inline-block;
@@ -157,7 +167,52 @@
     line-height: 1.35;
 }
 
-/* 危险区 */
+/* ========== 勾选与死规则表 ========== */
+
+.cx-block .cx-dead .cx-cbcell {
+    width: 1.8em;
+    text-align: center;
+    padding-top: 6px;
+}
+
+.cx-block .cx-cb { width: 16px; height: 16px; margin: 0; }
+
+/* ========== 冲突块 ========== */
+
+.cx-block .cx-conflict {
+    margin: 6px 0 10px;
+    padding: 7px 9px;
+    border-radius: 6px;
+    border-left: 3px solid rgba(128, 128, 128, 0.5);
+    background: rgba(128, 128, 128, 0.07);
+}
+
+.cx-block .cx-sev-high   { border-left-color: #ef5350; background: rgba(239, 83, 80, 0.08); }
+.cx-block .cx-sev-medium { border-left-color: #ffa726; background: rgba(255, 167, 38, 0.07); }
+.cx-block .cx-sev-low    { border-left-color: #78909c; background: rgba(120, 144, 156, 0.07); }
+
+.cx-block .cx-conflict-head {
+    font-size: 0.84em;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.cx-block .cx-sev {
+    display: inline-block;
+    font-size: 0.88em;
+    padding: 0 5px;
+    border-radius: 3px;
+    margin-right: 5px;
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.cx-block .cx-mini {
+    font-size: 0.92em;
+    padding: 2px 8px;
+}
+
+/* ========== 危险区 ========== */
+
 .cx-block .cx-danger {
     margin: 12px 0;
     padding: 9px 10px;
@@ -172,9 +227,7 @@
     margin-bottom: 3px;
 }
 
-.cx-block .cx-btn-danger {
-    border-color: rgba(239, 83, 80, 0.6) !important;
-}
+.cx-block .cx-btn-danger { border-color: rgba(239, 83, 80, 0.6) !important; }
 
 .cx-block .cx-btn-armed {
     background: rgba(239, 83, 80, 0.32) !important;
@@ -182,10 +235,7 @@
     font-weight: bold;
 }
 
-.cx-block button[disabled] {
-    opacity: 0.42;
-    pointer-events: none;
-}
+.cx-block button[disabled] { opacity: 0.42; pointer-events: none; }
 
 .cx-block .cx-list {
     margin: 4px 0 4px 1.2em;
@@ -209,12 +259,130 @@
     border-top: 1px solid rgba(128, 128, 128, 0.22);
 }
 
+/* ========== 悬浮球 ========== */
+
+.cx-ball {
+    position: fixed;
+    width: 46px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    font-size: 24px;
+    border-radius: 50%;
+    background: rgba(30, 30, 34, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    cursor: grab;
+    z-index: 9998;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: none;
+    transition: transform 0.12s ease-out;
+}
+
+.cx-ball:active {
+    cursor: grabbing;
+    transform: scale(0.92);
+}
+
+/* ========== 悬浮窗 ========== */
+
+.cx-window {
+    position: fixed;
+    left: 50%;
+    top: 8vh;
+    transform: none;
+    width: min(430px, 94vw);
+    max-height: 78vh;
+    display: flex;
+    flex-direction: column;
+    background: rgba(24, 24, 28, 0.97);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 10px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.55);
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.cx-win-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px;
+    background: rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.cx-win-bar:active { cursor: grabbing; }
+
+.cx-win-title {
+    font-size: 0.88em;
+    font-weight: bold;
+}
+
+.cx-win-btns { display: flex; gap: 4px; }
+
+.cx-win-btn {
+    width: 26px;
+    height: 26px;
+    line-height: 1;
+    padding: 0;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 5px;
+    color: inherit;
+    cursor: pointer;
+}
+
+.cx-win-btn:active { background: rgba(255, 255, 255, 0.2); }
+
+.cx-win-tabs {
+    display: flex;
+    gap: 3px;
+    padding: 6px 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.cx-tab {
+    flex: 0 0 auto;
+    padding: 3px 9px;
+    font-size: 0.78em;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    color: inherit;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.cx-tab-on {
+    background: rgba(138, 164, 255, 0.28);
+    border-color: rgba(138, 164, 255, 0.5);
+    font-weight: bold;
+}
+
+.cx-win-body {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 10px;
+}
+
+/* ========== 提示条 ========== */
+
 .cx-toast {
     position: fixed;
     left: 50%;
     bottom: 64px;
     transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.84);
+    background: rgba(0, 0, 0, 0.86);
     color: #fff;
     padding: 8px 16px;
     border-radius: 20px;
@@ -233,9 +401,30 @@
     100% { opacity: 0; }
 }
 
+/* ========== 移动端 ========== */
+
 @media (max-width: 768px) {
     .cx-block .cx-table { font-size: 0.72em; }
     .cx-block .cx-bar { display: none; }
     .cx-block .cx-actions { font-size: 0.85em; }
     .cx-block .cx-cb { width: 20px; height: 20px; }
+
+    .cx-ball {
+        width: 42px;
+        height: 42px;
+        line-height: 42px;
+        font-size: 22px;
+    }
+
+    .cx-window {
+        width: 96vw;
+        max-height: 82vh;
+    }
+
+    .cx-win-body { padding: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cx-ball { transition: none; }
+    .cx-toast { animation-duration: 0.01s; }
 }
