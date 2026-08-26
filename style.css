@@ -1,0 +1,241 @@
+/* 全部选择器带 cx- 前缀，不触碰酒馆任何原生元素 */
+
+.cx-block .cx-notice {
+    background: rgba(76, 175, 80, 0.12);
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    border-radius: 6px;
+    padding: 7px 10px;
+    margin-bottom: 10px;
+    font-size: 0.82em;
+    line-height: 1.5;
+}
+
+.cx-block .cx-section {
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.22);
+}
+
+.cx-block .cx-section:last-of-type { border-bottom: none; }
+
+.cx-block .cx-section-title {
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.cx-block .cx-subhead {
+    font-size: 0.82em;
+    font-weight: bold;
+    opacity: 0.8;
+    margin: 10px 0 4px;
+}
+
+.cx-block .cx-head {
+    font-size: 0.85em;
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
+.cx-block .cx-hint,
+.cx-block .cx-note {
+    font-size: 0.75em;
+    opacity: 0.62;
+    line-height: 1.5;
+    margin: 4px 0 6px;
+}
+
+.cx-block .cx-warn {
+    opacity: 0.85;
+    color: #ffb74d;
+}
+
+.cx-block .cx-dim { opacity: 0.55; font-weight: normal; }
+
+.cx-block .cx-empty {
+    font-size: 0.8em;
+    opacity: 0.5;
+    padding: 6px 0;
+}
+
+.cx-block code {
+    font-family: ui-monospace, Consolas, monospace;
+    font-size: 0.92em;
+    background: rgba(128, 128, 128, 0.18);
+    padding: 0 3px;
+    border-radius: 3px;
+}
+
+.cx-block .cx-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.78em;
+}
+
+.cx-block .cx-table td,
+.cx-block .cx-table th {
+    padding: 3px 4px;
+    vertical-align: top;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.12);
+}
+
+.cx-block .cx-table th {
+    font-size: 0.92em;
+    opacity: 0.7;
+    text-align: left;
+}
+
+.cx-block .cx-idx { width: 2em; text-align: right; opacity: 0.5; }
+.cx-block .cx-name { word-break: break-word; }
+
+.cx-block .cx-num {
+    text-align: right;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+.cx-block .cx-bar {
+    font-family: ui-monospace, Consolas, monospace;
+    letter-spacing: -1px;
+    white-space: nowrap;
+    opacity: 0.7;
+}
+
+.cx-block .cx-tag {
+    display: inline-block;
+    font-size: 0.85em;
+    padding: 0 4px;
+    border-radius: 3px;
+    margin-right: 4px;
+}
+
+.cx-block .cx-tag-preset  { background: rgba(103, 140, 255, 0.28); }
+.cx-block .cx-tag-wi      { background: rgba(255, 167, 38, 0.28); }
+.cx-block .cx-tag-card    { background: rgba(171, 71, 188, 0.28); }
+.cx-block .cx-tag-history { background: rgba(102, 187, 106, 0.28); }
+
+/* 死规则表 */
+.cx-block .cx-dead .cx-cbcell {
+    width: 1.8em;
+    text-align: center;
+    padding-top: 6px;
+}
+
+.cx-block .cx-cb {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+}
+
+.cx-block .cx-lv {
+    display: inline-block;
+    font-size: 0.82em;
+    font-weight: bold;
+    padding: 0 4px;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+.cx-block .cx-lv-L1 { background: rgba(239, 83, 80, 0.3); }
+.cx-block .cx-lv-L2 { background: rgba(255, 112, 67, 0.3); }
+.cx-block .cx-lv-L3 { background: rgba(255, 183, 77, 0.3); }
+.cx-block .cx-lv-L4 { background: rgba(128, 128, 128, 0.28); }
+
+.cx-block .cx-why {
+    font-size: 0.88em;
+    opacity: 0.62;
+    margin-top: 2px;
+    line-height: 1.4;
+}
+
+.cx-block .cx-code {
+    font-family: ui-monospace, Consolas, monospace;
+    font-size: 0.82em;
+    opacity: 0.55;
+    margin-top: 2px;
+    word-break: break-all;
+    line-height: 1.35;
+}
+
+/* 危险区 */
+.cx-block .cx-danger {
+    margin: 12px 0;
+    padding: 9px 10px;
+    border: 1px solid rgba(239, 83, 80, 0.35);
+    border-radius: 6px;
+    background: rgba(239, 83, 80, 0.07);
+}
+
+.cx-block .cx-danger-title {
+    font-size: 0.85em;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.cx-block .cx-btn-danger {
+    border-color: rgba(239, 83, 80, 0.6) !important;
+}
+
+.cx-block .cx-btn-armed {
+    background: rgba(239, 83, 80, 0.32) !important;
+    border-color: rgba(239, 83, 80, 0.9) !important;
+    font-weight: bold;
+}
+
+.cx-block button[disabled] {
+    opacity: 0.42;
+    pointer-events: none;
+}
+
+.cx-block .cx-list {
+    margin: 4px 0 4px 1.2em;
+    padding: 0;
+    font-size: 0.78em;
+    line-height: 1.6;
+}
+
+.cx-block .cx-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 6px 0;
+    font-size: 0.8em;
+}
+
+.cx-block .cx-footer {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(128, 128, 128, 0.22);
+}
+
+.cx-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 64px;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.84);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    z-index: 100000;
+    pointer-events: none;
+    max-width: 84vw;
+    text-align: center;
+    animation: cx-fade 1.8s ease forwards;
+}
+
+@keyframes cx-fade {
+    0%   { opacity: 0; transform: translateX(-50%) translateY(8px); }
+    12%  { opacity: 1; transform: translateX(-50%) translateY(0); }
+    82%  { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+    .cx-block .cx-table { font-size: 0.72em; }
+    .cx-block .cx-bar { display: none; }
+    .cx-block .cx-actions { font-size: 0.85em; }
+    .cx-block .cx-cb { width: 20px; height: 20px; }
+}
