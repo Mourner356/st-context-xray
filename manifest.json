@@ -1,0 +1,11 @@
+{
+    "display_name": "上下文审计 Context X-Ray",
+    "loading_order": 130,
+    "requires": [],
+    "optional": [],
+    "js": "index.js",
+    "css": "style.css",
+    "author": "TavernMaster",
+    "version": "0.3.0",
+    "homePage": "https://github.com/你的用户名/st-context-xray"
+}
